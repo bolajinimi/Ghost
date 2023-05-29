@@ -18,6 +18,9 @@ const config: StorybookConfig = {
 	},
 	// staticDirs: ['../public/fonts'],
 	async viteFinal(config, options) {
+		if (!config.resolve) {
+			config.resolve = {};
+		  }
 		config.resolve.alias = {
 			crypto: require.resolve('rollup-plugin-node-builtins'),
 		}
